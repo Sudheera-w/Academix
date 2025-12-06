@@ -10,13 +10,22 @@ function StudentsPage(){
         .catch((error)=>{console.error("Error fetching students:",error)});
     },[])
     return(
-        <div style={{display:"flex",alignItems: "center",marginTop:"50px",flexDirection: "column"}}>
-            <h1 style={{ textAlign: "center",marginBottom:"20px"}}>Students</h1>
+        <div style={{
+            display:"flex",
+            alignItems: "center", 
+            flexDirection: "column", 
+            paddingTop: "50px", 
+            width: "100%",
+            boxSizing: "border-box",
+            margin: 0
+        }}>
+            <h1 style={{ textAlign: "center", marginBottom:"20px", width: "100%", marginTop: "10px"}}>Students</h1>
             <table
             border="2"
             cellPadding="10"
             style={{
-                width:"100%",
+                width:"90%",
+                maxWidth: "900px",
                 borderCollapse:"collapse",
                 textAlign:"center",
                 background:"#2852bc",

@@ -7,7 +7,7 @@ function NavBar(){
                 display:"flex",
                 gap:"20px",
                 padding:"15px",
-                background:"#175ad3",
+                background:"#f8f8f8",
                 position: "fixed",
                 top: 0,
                 left: 0,
