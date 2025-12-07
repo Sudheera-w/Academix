@@ -11,6 +11,17 @@ function StudentsPage(){
         StudentService.getAllStudents().then((response)=>{setStudents(response.data);})
         .catch((error)=>{console.error("Error fetching students:",error)});
     },[])
+
+    const handleDelete = (id) => {
+        if(confirm("Are you sure you want to delete this student?")){
+        StudentService.deleteStudent(id)
+            .then(()=>{
+                setStudents(students.filter((student)=>(student.id !== id)));
+            })
+            .catch((error)=>console.log("Unable to delete student",error));
+    }}
+
+
     return(
         <div style={{
             display:"flex",
@@ -67,6 +78,23 @@ function StudentsPage(){
                                 onMouseEnter={(e) => e.target.style.background = "#00ca6b"}
                                 onMouseLeave={(e) => e.target.style.background = "#1beb89"}
                             >Edit</button>
+                            <button
+                                style={{
+                                    padding: "5px 14px",
+                                    fontSize: "14px",
+                                    fontWeight: "bold",
+                                    borderRadius: "4px",
+                                    marginLeft: "10px",
+                                    background: "#680000",
+                                    color: "black",
+                                    cursor: "pointer",
+                                    transition: "background 0.3s",
+                                }}
+                                onClick={() => handleDelete(student.id)}                                onMouseEnter={(e) => e.target.style.background = "#640000"}
+                                onMouseLeave={(e) => e.target.style.background = "#cd0000"}
+                            >
+                                Delete
+                            </button>
                         </td>
                     </tr>
                     ))}
