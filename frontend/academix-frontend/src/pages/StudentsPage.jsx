@@ -31,7 +31,9 @@ function StudentsPage(){
                 background:"#2852bc",
                 marginTop:"20px",
             }}>
-                <thead>
+                <thead style={{
+                    background:"#000000",
+                }}>
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
