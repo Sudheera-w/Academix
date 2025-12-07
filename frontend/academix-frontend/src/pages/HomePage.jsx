@@ -1,8 +1,24 @@
 function HomePage() {
+
     return (
-        <div>
-            <h1>Welcome to AcademiX</h1>
-            <p>Student Enrollment Management System</p>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                textAlign: "center",
+                paddingTop: "40px"
+            }}
+        >
+            <h1 style={{ fontSize: "40px", marginBottom: "20px" }}>
+                Welcome to AcademiX
+            </h1>
+
+            <p style={{ fontSize: "18px", maxWidth: "600px" }}>
+                This is your student management system.
+            </p>
         </div>
     );
 }

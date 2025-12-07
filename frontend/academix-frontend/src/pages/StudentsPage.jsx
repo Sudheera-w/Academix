@@ -90,7 +90,8 @@ function StudentsPage(){
                                     cursor: "pointer",
                                     transition: "background 0.3s",
                                 }}
-                                onClick={() => handleDelete(student.id)}                                onMouseEnter={(e) => e.target.style.background = "#640000"}
+                                onClick={() => handleDelete(student.id)}
+                                onMouseEnter={(e) => e.target.style.background = "#640000"}
                                 onMouseLeave={(e) => e.target.style.background = "#cd0000"}
                             >
                                 Delete
