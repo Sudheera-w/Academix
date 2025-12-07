@@ -1,8 +1,10 @@
 import {useEffect,useState} from "react";
+import {useNavigate} from "react-router-dom";
 import StudentService from "../Services/StudentService.jsx";
 
 function StudentsPage(){
 
+    const navigate = useNavigate();
     const [students,setStudents]= useState([])
 
     useEffect(()=>{
@@ -39,6 +41,7 @@ function StudentsPage(){
                         <th>Email</th>
                         <th>Department</th>
                         <th>Year</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +51,11 @@ function StudentsPage(){
                         <td>{student.email}</td>
                         <td>{student.department}</td>
                         <td>{student.year}</td>
+                        <td>
+                            <button
+                                onClick={()=>navigate(`/edit-student/${student.id}`)}
+                            >Edit</button>
+                        </td>
                     </tr>
                     ))}
                 </tbody>
