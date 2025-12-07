@@ -52,16 +52,16 @@ function UpdateStudentPage(){
             width: "100%",
             margin: 0
         }}>
-            <h2 style={{ textAlign: "center", marginBottom:"20px", width: "100%", marginTop: "10px"}}>Update Student</h2>
+            <h2 style={{ textAlign: "center", marginBottom:"10px", width: "100%", marginTop: "20px"}}>Update Student</h2>
             <form onSubmit={handleSubmit} style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "20px",
                 width: "90%",
-                maxWidth: "500px",
+                maxWidth: "450px",
                 padding: "30px",
             }}>
-                <label>Name</label>
+                <label style={{ marginBottom: "-15px" }}>Name</label>
                 <input
                     type="text"
                     name="name"
@@ -74,12 +74,13 @@ function UpdateStudentPage(){
                         fontSize: "16px",
                         borderRadius: "4px",
                         border: "2px solid #ccc",
-                        transition: "border-color 0.8s"
+                        transition: "border-color 0.8s",
+                        marginBottom:"-5px"
                     }}
                     onFocus={(e) => e.target.style.borderColor = "#2852bc"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
                 />
-                <label>Email</label>
+                <label style={{ marginBottom: "-15px" }}>Email</label>
                 <input
                     type="email"
                     name="email"
@@ -92,12 +93,13 @@ function UpdateStudentPage(){
                         fontSize: "16px",
                         borderRadius: "4px",
                         border: "2px solid #ccc",
-                        transition: "border-color 0.8s"
+                        transition: "border-color 0.8s",
+                        marginBottom:"-5px"
                     }}
                     onFocus={(e) => e.target.style.borderColor = "#2852bc"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
                 />
-                <label>Department</label>
+                <label style={{ marginBottom: "-15px" }}>Department</label>
                 <input
                     type="text"
                     name="department"
@@ -110,12 +112,13 @@ function UpdateStudentPage(){
                         fontSize: "16px",
                         borderRadius: "4px",
                         border: "2px solid #ccc",
-                        transition: "border-color 0.8s"
+                        transition: "border-color 0.8s",
+                        marginBottom:"-5px"
                     }}
                     onFocus={(e) => e.target.style.borderColor = "#2852bc"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
                 />
-                <label>Year</label>
+                <label style={{ marginBottom: "-15px" }}>Year</label>
                 <input
                     type="number"
                     name="year"
@@ -128,7 +131,8 @@ function UpdateStudentPage(){
                         fontSize: "16px",
                         borderRadius: "4px",
                         border: "2px solid #ccc",
-                        transition: "border-color 0.8s"
+                        transition: "border-color 0.8s",
+                        marginBottom:"-5px"
                     }}
                     onFocus={(e) => e.target.style.borderColor = "#2852bc"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
@@ -144,7 +148,10 @@ function UpdateStudentPage(){
                         color: "white",
                         cursor: "pointer",
                         transition: "background 0.3s",
-                        marginTop: "10px"
+                        marginTop: "10px",
+                        width: "50%",
+                        maxWidth: "400px",
+                        alignSelf: "center",
                     }}
                     onMouseEnter={(e) => e.target.style.background = "#0bc447"}
                     onMouseLeave={(e) => e.target.style.background = "#016c25"}
