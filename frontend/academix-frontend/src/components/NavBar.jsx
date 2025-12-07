@@ -1,25 +1,104 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function NavBar(){
+    const location = useLocation();
+    
+    const linkStyle = {
+        textDecoration: "none",
+        color: "#333",
+        padding: "10px 20px",
+        borderRadius: "4px",
+        transition: "all 0.3s",
+        fontWeight: "500",
+        fontSize: "16px",
+        whiteSpace: "nowrap",
+    };
+
+    const activeLinkStyle = {
+        ...linkStyle,
+        background: "#2852bc",
+        color: "white",
+    };
+
     return(
         <nav
             style={{
                 display:"flex",
-                gap:"20px",
-                padding:"15px",
-                background:"#f8f8f8",
+                alignItems: "center",
+                gap:"10px",
+                padding:"5px 30px",
+                background:"#ffffff",
                 position: "fixed",
-                top: 0,
-                left: 0,
                 width: "100%",
-                zIndex: 1000,
-                boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                borderBottom: "1px solid #e0e0e0",
+                justifyContent: "space-between",
+                boxSizing: "border-box",
 
-        }}
+            }}
         >
-            <Link to="/">Home</Link>
-            <Link to="/Students">Students</Link>
-            <Link to={"/Students/add"}>Add students</Link>
+
+            <Link 
+                to="/" 
+                style={{
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    color: "#2852bc",
+                    textDecoration: "none",
+                }}
+            >
+                Academix
+            </Link>
+            <div style={{ marginLeft: "auto", display: "flex", gap: "10px", alignItems: "center" }}>
+                <Link
+                    to="/"
+                    style={location.pathname === "/" ? activeLinkStyle : linkStyle}
+                    onMouseEnter={(e) => {
+                        if(location.pathname !== "/") {
+                            e.target.style.background = "#f0f0f0";
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if(location.pathname !== "/") {
+                            e.target.style.background = "transparent";
+                        }
+                    }}
+                >
+                    Home
+                </Link>
+                <Link
+                    to="/Students"
+                    style={location.pathname === "/Students" ? activeLinkStyle : linkStyle}
+                    onMouseEnter={(e) => {
+                        if(location.pathname !== "/Students") {
+                            e.target.style.background = "#f0f0f0";
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if(location.pathname !== "/Students") {
+                            e.target.style.background = "transparent";
+                        }
+                    }}
+                >
+                    Students
+                </Link>
+                <Link
+                    to="/Students/add"
+                    style={location.pathname === "/Students/add" ? activeLinkStyle : linkStyle}
+                    onMouseEnter={(e) => {
+                        if(location.pathname !== "/Students/add") {
+                            e.target.style.background = "#f0f0f0";
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if(location.pathname !== "/Students/add") {
+                            e.target.style.background = "transparent";
+                        }
+                    }}
+                >
+                    Add Student
+                </Link>
+            </div>
         </nav>
     )
 }
