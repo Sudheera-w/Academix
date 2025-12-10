@@ -1,6 +1,7 @@
 package com.academix.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +25,7 @@ public class Module {
     private String department;
 
     @ManyToMany(mappedBy = "modules")
-    @JsonBackReference
+    @JsonIgnore
     private List<Student> students;
 
 }

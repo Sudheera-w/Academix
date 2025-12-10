@@ -31,7 +31,6 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "module_id")
     )
-    @JsonManagedReference
     private List<Module> modules;
 
 }
