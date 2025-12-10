@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import UpdateStudentPage from "../pages/UpdateStudentPage.jsx";
 import ModulesPage from "../pages/ModulesPage.jsx";
 import AddModulePage from "../pages/AddModulePage.jsx";
+import EditModulePage from "../pages/EditModulePage.jsx";
 
 function AppRouter() {
     return (
@@ -20,6 +21,7 @@ function AppRouter() {
                     <Route path="/edit-student/:id" element={<UpdateStudentPage />} />
                     <Route path="/modules" element={<ModulesPage/>}/>
                     <Route path="/modules/add" element={<AddModulePage/>}/>
+                    <Route path="/edit-module/:id" element={<EditModulePage/>}/>
 
                 </Routes>
             </div>
