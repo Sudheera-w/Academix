@@ -1,12 +1,13 @@
 package com.academix.backend.controller;
 
 import com.academix.backend.entity.Module;
-import com.academix.backend.entity.Student;
+import com.academix.backend.entity.User;
 import com.academix.backend.repository.ModuleRepository;
-import com.academix.backend.repository.StudentRepository;
+import com.academix.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:5173")
@@ -16,40 +17,73 @@ import java.util.List;
 public class EnrollmentController {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private ModuleRepository moduleRepository;
 
     // Enroll student in module
     @PostMapping("/{studentId}/{moduleId}")
-    public Student enrollStudent(@PathVariable Long studentId, @PathVariable Long moduleId) {
+    public User enrollStudent(@PathVariable Long studentId, @PathVariable Long moduleId) {
 
-        Student student = studentRepository.findById(studentId).orElse(null);
+        User user = userRepository.findById(studentId).orElse(null);
         Module module = moduleRepository.findById(moduleId).orElse(null);
 
-        if (student == null || module == null) {
+        if (user == null || module == null) {
             return null;
         }
 
-        student.getModules().add(module);
-        return studentRepository.save(student);
+        // Ensure user is a student
+        if (!"student".equalsIgnoreCase(user.getRole())) {
+            return null;
+        }
+
+        if (user.getModules() == null) {
+            user.setModules(new ArrayList<>());
+        }
+        user.getModules().add(module);
+        return userRepository.save(user);
     }
 
-    // Get all modules student enrolled in
+    // Get all modules that student enrolled in
     @GetMapping("/student/{studentId}")
     public List<Module> getModulesOfStudent(@PathVariable Long studentId) {
-        Student student = studentRepository.findById(studentId).orElse(null);
-        if (student == null) return null;
-        return student.getModules();
+        User user = userRepository.findById(studentId).orElse(null);
+        if (user == null || !"student".equalsIgnoreCase(user.getRole())) return null;
+        if (user.getModules() == null) {
+            return new ArrayList<>();
+        }
+        return user.getModules();
     }
 
     // Get all students of a module
     @GetMapping("/module/{moduleId}")
-    public List<Student> getStudentsOfModule(@PathVariable Long moduleId) {
+    public List<User> getStudentsOfModule(@PathVariable Long moduleId) {
         Module module = moduleRepository.findById(moduleId).orElse(null);
         if (module == null) return null;
-        return module.getStudents();
+        return module.getUsers();
+    }
+
+    // Unenroll student from module
+    @DeleteMapping("/{studentId}/{moduleId}")
+    public User unenrollStudent(@PathVariable Long studentId, @PathVariable Long moduleId) {
+        User user = userRepository.findById(studentId).orElse(null);
+        Module module = moduleRepository.findById(moduleId).orElse(null);
+
+        if (user == null || module == null) {
+            return null;
+        }
+
+        // Ensure user is a student
+        if (!"student".equalsIgnoreCase(user.getRole())) {
+            return null;
+        }
+
+        if (user.getModules() == null) {
+            user.setModules(new ArrayList<>());
+        }
+        user.getModules().remove(module);
+        return userRepository.save(user);
     }
 
 }

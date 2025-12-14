@@ -1,6 +1,6 @@
 package com.academix.backend.controller;
 
-import com.academix.backend.entity.Student;
+import com.academix.backend.entity.User;
 import com.academix.backend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,23 +15,23 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping
-    public List<Student> getAllStudents() {
+    public List<User> getAllStudents() {
         return studentService.getAllStudents();
     }
 
     @GetMapping("/{id}")
-    public Student getStudentById(@PathVariable Long id) {
+    public User getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id);
     }
 
     @PostMapping
-    public Student createStudent(@RequestBody Student student) {
-        return studentService.createStudent(student);
+    public User createStudent(@RequestBody User user) {
+        return studentService.createStudent(user);
     }
 
     @PutMapping("/{id}")
-    public Student updateStudent(@PathVariable long id, @RequestBody Student student) {
-        return studentService.updateStudent(id, student);
+    public User updateStudent(@PathVariable long id, @RequestBody User user) {
+        return studentService.updateStudent(id, user);
     }
 
     @DeleteMapping("/{id}")

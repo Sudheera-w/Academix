@@ -26,6 +26,6 @@ public class Module {
 
     @ManyToMany(mappedBy = "modules")
     @JsonIgnore
-    private List<Student> students;
+    private List<User> users;
 
 }

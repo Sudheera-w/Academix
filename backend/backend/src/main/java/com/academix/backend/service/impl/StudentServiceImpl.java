@@ -1,48 +1,63 @@
 package com.academix.backend.service.impl;
 
-import com.academix.backend.entity.Student;
-import com.academix.backend.repository.StudentRepository;
+import com.academix.backend.entity.User;
+import com.academix.backend.repository.UserRepository;
 import com.academix.backend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentServiceImpl implements StudentService {
     @Autowired
-    private StudentRepository studentRepository;
+    private UserRepository userRepository;
 
     @Override
-    public List<Student> getAllStudents() {
-        return studentRepository.findAll();
+    public List<User> getAllStudents() {
+        return userRepository.findAll().stream()
+                .filter(user -> "student".equalsIgnoreCase(user.getRole()))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Student getStudentById(Long id) {
-        return studentRepository.findById(id).orElse(null);
+    public User getStudentById(Long id) {
+        User user = userRepository.findById(id).orElse(null);
+        if (user != null && "student".equalsIgnoreCase(user.getRole())) {
+            return user;
+        }
+        return null;
     }
 
     @Override
-    public Student createStudent(Student student) {
-        return studentRepository.save(student);
+    public User createStudent(User user) {
+        user.setRole("student");
+        if (user.getModules() == null) {
+            user.setModules(new ArrayList<>());
+        }
+        return userRepository.save(user);
     }
 
     @Override
-    public Student updateStudent(Long id, Student student) {
-        Student existing = studentRepository.findById(id).orElse(null);
-        if (existing == null) {
+    public User updateStudent(Long id, User user) {
+        User existing = userRepository.findById(id).orElse(null);
+        if (existing == null || !"student".equalsIgnoreCase(existing.getRole())) {
             return null;
         }
-        existing.setName(student.getName());
-        existing.setEmail(student.getEmail());
-        existing.setDepartment(student.getDepartment());
-        existing.setYear(student.getYear());
-        return studentRepository.save(existing);
+        existing.setName(user.getName());
+        existing.setEmail(user.getEmail());
+        existing.setDepartment(user.getDepartment());
+        existing.setYear(user.getYear());
+        return userRepository.save(existing);
     }
 
     @Override
     public void deleteStudent(Long id) {
-        studentRepository.deleteById(id);
+        User user = userRepository.findById(id).orElse(null);
+        if (user != null && "student".equalsIgnoreCase(user.getRole())) {
+            userRepository.deleteById(id);
+        }
     }
 }
