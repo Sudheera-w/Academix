@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 function NavBar(){
     const location = useLocation();
-    
+
     const linkStyle = {
         textDecoration: "none",
         color: "#333",
@@ -38,8 +38,8 @@ function NavBar(){
             }}
         >
 
-            <Link 
-                to="/" 
+            <Link
+                to="/"
                 style={{
                     fontSize: "20px",
                     fontWeight: "bold",
@@ -98,6 +98,7 @@ function NavBar(){
                 >
                     Modules
                 </Link>
+
                 <Link
                     to="/enrollments"
                     style={location.pathname === "/enrollments" ? activeLinkStyle : linkStyle}
@@ -114,6 +115,25 @@ function NavBar(){
                 >
                     enrollments
                 </Link>
+
+                <Link
+                    to="/login"
+                    style={location.pathname === "/login" ? activeLinkStyle : linkStyle}
+                    onMouseEnter={(e) => {
+                        if(location.pathname !== "/login") {
+                            e.target.style.background = "#f0f0f0";
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if(location.pathname !== "/login") {
+                            e.target.style.background = "transparent";
+                        }
+                    }}
+                >
+                    Login
+                </Link>
+
+
             </div>
         </nav>
     )
