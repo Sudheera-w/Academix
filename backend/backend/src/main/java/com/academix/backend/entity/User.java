@@ -25,4 +25,6 @@ public class User {
     private String role;  // 2 Roles -> Admin/student
 
     private String department;
+
+    private String year;
 }

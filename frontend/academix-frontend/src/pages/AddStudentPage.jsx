@@ -10,7 +10,7 @@ function AddStudentPage(){
         name:"",
         email:"",
         department:"",
-        year:2000,
+        year:1,
     });
 
     const handleChange=(e)=>{

@@ -47,6 +47,7 @@ public class AuthServiceImpl implements AuthService {
         user.setPassword(request.getPassword());
         user.setRole("STUDENT"); // always "student" for signup
         user.setDepartment(request.getDepartment());
+        user.setYear(request.getYear());
 
         userRepository.save(user);
         return "Signup successful";
