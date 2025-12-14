@@ -98,7 +98,6 @@ function NavBar(){
                 >
                     Modules
                 </Link>
-
                 <Link
                     to="/enrollments"
                     style={location.pathname === "/enrollments" ? activeLinkStyle : linkStyle}
@@ -115,7 +114,6 @@ function NavBar(){
                 >
                     enrollments
                 </Link>
-
                 <Link
                     to="/login"
                     style={location.pathname === "/login" ? activeLinkStyle : linkStyle}
@@ -132,8 +130,26 @@ function NavBar(){
                 >
                     Login
                 </Link>
-
-
+                <Link
+                    to="/signup"
+                    style={{
+                        ...(location.pathname === "/signup" ? activeLinkStyle : linkStyle),
+                        backgroundColor: location.pathname === "/signup" ? "#2852bc" : "#2852bc",
+                        color: "white",
+                    }}
+                    onMouseEnter={(e) => {
+                        if(location.pathname !== "/signup") {
+                            e.target.style.background = "#1e3d8f";
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if(location.pathname !== "/signup") {
+                            e.target.style.background = "#2852bc";
+                        }
+                    }}
+                >
+                    Sign Up
+                </Link>
             </div>
         </nav>
     )

@@ -10,6 +10,7 @@ import AddModulePage from "../pages/AddModulePage.jsx";
 import EditModulePage from "../pages/EditModulePage.jsx";
 import EnrollmentPage from "../pages/EnrollmentPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
+import SignupPage from "../pages/SignupPage.jsx";
 
 function AppRouter() {
     return (
@@ -26,6 +27,7 @@ function AppRouter() {
                     <Route path="/edit-module/:id" element={<EditModulePage/>}/>
                     <Route path="/enrollments" element={<EnrollmentPage />} />
                     <Route path="/login" element={<LoginPage />} />
+                    <Route path="/signup" element={<SignupPage />} />
                 </Routes>
             </div>
         </BrowserRouter>
