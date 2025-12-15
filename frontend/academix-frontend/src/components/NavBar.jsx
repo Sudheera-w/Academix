@@ -1,7 +1,16 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function NavBar(){
+function NavBar() {
     const location = useLocation();
+    const navigate = useNavigate();
+    const isAdmin = localStorage.getItem("role") === 'ADMIN';
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        localStorage.removeItem("email");
+        navigate("/login");
+    };
 
     const linkStyle = {
         textDecoration: "none",
@@ -20,24 +29,22 @@ function NavBar(){
         color: "white",
     };
 
-    return(
+    return (
         <nav
             style={{
-                display:"flex",
+                display: "flex",
                 alignItems: "center",
-                gap:"10px",
-                padding:"5px 30px",
-                background:"#ffffff",
+                gap: "10px",
+                padding: "5px 30px",
+                background: "#ffffff",
                 position: "fixed",
                 width: "100%",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                 borderBottom: "1px solid #e0e0e0",
                 justifyContent: "space-between",
                 boxSizing: "border-box",
-
             }}
         >
-
             <Link
                 to="/"
                 style={{
@@ -50,106 +57,125 @@ function NavBar(){
                 Academix
             </Link>
             <div style={{ marginLeft: "auto", display: "flex", gap: "10px", alignItems: "center" }}>
-                <Link
-                    to="/"
-                    style={location.pathname === "/" ? activeLinkStyle : linkStyle}
-                    onMouseEnter={(e) => {
-                        if(location.pathname !== "/") {
-                            e.target.style.background = "#f0f0f0";
-                        }
-                    }}
-                    onMouseLeave={(e) => {
-                        if(location.pathname !== "/") {
-                            e.target.style.background = "transparent";
-                        }
-                    }}
-                >
-                    Home
-                </Link>
-                <Link
-                    to="/Students"
-                    style={location.pathname === "/Students" ? activeLinkStyle : linkStyle}
-                    onMouseEnter={(e) => {
-                        if(location.pathname !== "/Students") {
-                            e.target.style.background = "#f0f0f0";
-                        }
-                    }}
-                    onMouseLeave={(e) => {
-                        if(location.pathname !== "/Students") {
-                            e.target.style.background = "transparent";
-                        }
-                    }}
-                >
-                    Students
-                </Link>
-                <Link
-                    to="/modules"
-                    style={location.pathname === "/modules" ? activeLinkStyle : linkStyle}
-                    onMouseEnter={(e) => {
-                        if(location.pathname !== "/modules") {
-                            e.target.style.background = "#f0f0f0";
-                        }
-                    }}
-                    onMouseLeave={(e) => {
-                        if(location.pathname !== "/modules") {
-                            e.target.style.background = "transparent";
-                        }
-                    }}
-                >
-                    Modules
-                </Link>
-                <Link
-                    to="/enrollments"
-                    style={location.pathname === "/enrollments" ? activeLinkStyle : linkStyle}
-                    onMouseEnter={(e) => {
-                        if(location.pathname !== "/enrollments") {
-                            e.target.style.background = "#f0f0f0";
-                        }
-                    }}
-                    onMouseLeave={(e) => {
-                        if(location.pathname !== "/enrollments") {
-                            e.target.style.background = "transparent";
-                        }
-                    }}
-                >
-                    enrollments
-                </Link>
-                <Link
-                    to="/login"
-                    style={location.pathname === "/login" ? activeLinkStyle : linkStyle}
-                    onMouseEnter={(e) => {
-                        if(location.pathname !== "/login") {
-                            e.target.style.background = "#f0f0f0";
-                        }
-                    }}
-                    onMouseLeave={(e) => {
-                        if(location.pathname !== "/login") {
-                            e.target.style.background = "transparent";
-                        }
-                    }}
-                >
-                    Login
-                </Link>
-                <Link
-                    to="/signup"
-                    style={{
-                        ...(location.pathname === "/signup" ? activeLinkStyle : linkStyle),
-                        backgroundColor: location.pathname === "/signup" ? "#2852bc" : "#2852bc",
-                        color: "white",
-                    }}
-                    onMouseEnter={(e) => {
-                        if(location.pathname !== "/signup") {
-                            e.target.style.background = "#1e3d8f";
-                        }
-                    }}
-                    onMouseLeave={(e) => {
-                        if(location.pathname !== "/signup") {
-                            e.target.style.background = "#2852bc";
-                        }
-                    }}
-                >
-                    Sign Up
-                </Link>
+                {isAdmin ? (
+                    <>
+                        <Link
+                            to="/"
+                            style={location.pathname === "/" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            to="/Students"
+                            style={location.pathname === "/Students" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/Students") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/Students") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            Students
+                        </Link>
+                        <Link
+                            to="/modules"
+                            style={location.pathname === "/modules" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/modules") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/modules") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            Modules
+                        </Link>
+                        <Link
+                            to="/enrollments"
+                            style={location.pathname === "/enrollments" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/enrollments") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/enrollments") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            Enrollments
+                        </Link>
+                        <button
+                            onClick={handleLogout}
+                            style={{ ...linkStyle, borderRadius: "24px",backgroundColor: "#980101", color: "white", border: "none", cursor: "pointer" }}
+                            onMouseEnter={(e) => {
+                                e.target.style.background = "#df0404";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.background = "#970101";
+                            }}
+                        >
+                            Logout
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <Link
+                            to="/login"
+                            style={location.pathname === "/login" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/login") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/login") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            Login
+                        </Link>
+                        <Link
+                            to="/signup"
+                            style={{
+                                ...(location.pathname === "/signup" ? activeLinkStyle : linkStyle),
+                                backgroundColor: location.pathname === "/signup" ? "#2852bc" : "#2852bc",
+                                color: "white",
+                            }}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/signup") {
+                                    e.target.style.background = "#1e3d8f";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/signup") {
+                                    e.target.style.background = "#2852bc";
+                                }
+                            }}
+                        >
+                            Sign Up
+                        </Link>
+                    </>
+                )}
             </div>
         </nav>
     )

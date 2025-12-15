@@ -8,26 +8,11 @@ function HomePage() {
             color: '#333',
             backgroundColor: '#f4f7f6',
             margin: 0,
-            padding: 0,
+            padding: '80px 0 0', // Adjusted padding to account for the fixed NavBar
             display: 'flex',
             flexDirection: 'column',
             minHeight: '100vh'
         }}>
-            <header style={{
-                backgroundColor: '#fff',
-                padding: '20px 40px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
-                <h1 style={{ margin: 0, fontSize: '24px', color: '#0056b3' }}>AcademiX</h1>
-                <nav>
-                    <Link to="/login" style={{ textDecoration: 'none', color: '#0056b3', margin: '0 10px' }}>Login</Link>
-                    <Link to="/register" style={{ textDecoration: 'none', color: '#fff', backgroundColor: '#0056b3', padding: '10px 15px', borderRadius: '5px' }}>Sign Up</Link>
-                </nav>
-            </header>
-
             <main style={{
                 flex: 1,
                 display: 'flex',
@@ -43,7 +28,7 @@ function HomePage() {
                 <p style={{ fontSize: '20px', maxWidth: '700px', marginBottom: '40px', color: '#555' }}>
                     Welcome to AcademiX, the all-in-one platform designed for both administrators and students. Manage with precision, learn with focus.
                 </p>
-                <Link to="/dashboard" style={{
+                <Link to="/signup" style={{
                     textDecoration: 'none',
                     color: '#fff',
                     backgroundColor: '#28a745',
