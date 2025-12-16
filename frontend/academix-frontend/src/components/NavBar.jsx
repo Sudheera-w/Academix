@@ -4,7 +4,7 @@ function NavBar() {
     const location = useLocation();
     const navigate = useNavigate();
     const role = localStorage.getItem("role");
-    const isAdmin = role === 'ADMIN';
+    const isAdmin = role && role.toLowerCase() === "admin";
     const isStudent = role && role.toLowerCase() === "student";
 
     const handleLogout = () => {
