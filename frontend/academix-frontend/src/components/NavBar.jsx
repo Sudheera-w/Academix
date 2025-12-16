@@ -3,7 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 function NavBar() {
     const location = useLocation();
     const navigate = useNavigate();
-    const isAdmin = localStorage.getItem("role") === 'ADMIN';
+    const role = localStorage.getItem("role");
+    const isAdmin = role === 'ADMIN';
+    const isStudent = role && role.toLowerCase() === "student";
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -57,7 +59,7 @@ function NavBar() {
                 Academix
             </Link>
             <div style={{ marginLeft: "auto", display: "flex", gap: "10px", alignItems: "center" }}>
-                {isAdmin ? (
+                {isAdmin && (
                     <>
                         <Link
                             to="/"
@@ -136,7 +138,61 @@ function NavBar() {
                             Logout
                         </button>
                     </>
-                ) : (
+                )}
+
+                {!isAdmin && isStudent && (
+                    <>
+                        <Link
+                            to="/"
+                            style={location.pathname === "/" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            Home
+                        </Link>
+
+
+                        <Link
+                            to="/my-modules"
+                            style={location.pathname === "/my-modules" ? activeLinkStyle : linkStyle}
+                            onMouseEnter={(e) => {
+                                if (location.pathname !== "/my-modules") {
+                                    e.target.style.background = "#f0f0f0";
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (location.pathname !== "/my-modules") {
+                                    e.target.style.background = "transparent";
+                                }
+                            }}
+                        >
+                            My Modules
+                        </Link>
+
+                        <button
+                            onClick={handleLogout}
+                            style={{ ...linkStyle, borderRadius: "24px",backgroundColor: "#980101", color: "white", border: "none", cursor: "pointer" }}
+                            onMouseEnter={(e) => {
+                                e.target.style.background = "#df0404";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.background = "#970101";
+                            }}
+                        >
+                            Logout
+                        </button>
+                    </>
+                )}
+
+                {!isAdmin && !isStudent && (
                     <>
                         <Link
                             to="/login"
