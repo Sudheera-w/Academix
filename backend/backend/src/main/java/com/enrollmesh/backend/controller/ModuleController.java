@@ -1,11 +1,11 @@
-package com.academix.backend.controller;
+package com.enrollmesh.backend.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.academix.backend.entity.Module;
-import com.academix.backend.service.ModuleService;
+import com.enrollmesh.backend.entity.Module;
+import com.enrollmesh.backend.service.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

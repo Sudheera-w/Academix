@@ -1,7 +1,7 @@
-package com.academix.backend.controller;
+package com.enrollmesh.backend.controller;
 
-import com.academix.backend.entity.User;
-import com.academix.backend.service.StudentService;
+import com.enrollmesh.backend.entity.User;
+import com.enrollmesh.backend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

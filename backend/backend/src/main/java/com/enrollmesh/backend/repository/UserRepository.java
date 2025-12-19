@@ -1,6 +1,6 @@
-package com.academix.backend.repository;
+package com.enrollmesh.backend.repository;
 
-import com.academix.backend.entity.User;
+import com.enrollmesh.backend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
-package com.academix.backend.service.impl;
+package com.enrollmesh.backend.service.impl;
 
-import com.academix.backend.entity.User;
-import com.academix.backend.repository.UserRepository;
-import com.academix.backend.service.StudentService;
+import com.enrollmesh.backend.entity.User;
+import com.enrollmesh.backend.repository.UserRepository;
+import com.enrollmesh.backend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

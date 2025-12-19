@@ -1,4 +1,4 @@
-package com.academix.backend.entity;
+package com.enrollmesh.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

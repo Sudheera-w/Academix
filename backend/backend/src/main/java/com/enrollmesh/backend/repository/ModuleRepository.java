@@ -1,6 +1,6 @@
-package com.academix.backend.repository;
+package com.enrollmesh.backend.repository;
 
-import com.academix.backend.entity.Module;
+import com.enrollmesh.backend.entity.Module;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ModuleRepository extends JpaRepository<Module, Long> {

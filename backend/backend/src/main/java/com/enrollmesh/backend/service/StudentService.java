@@ -1,6 +1,6 @@
-package com.academix.backend.service;
+package com.enrollmesh.backend.service;
 
-import com.academix.backend.entity.User;
+import com.enrollmesh.backend.entity.User;
 
 import java.util.List;
 

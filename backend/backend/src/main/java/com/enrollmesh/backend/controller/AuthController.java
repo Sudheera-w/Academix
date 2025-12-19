@@ -1,9 +1,9 @@
-package com.academix.backend.controller;
+package com.enrollmesh.backend.controller;
 
-import com.academix.backend.dto.LoginRequest;
-import com.academix.backend.dto.LoginResponse;
-import com.academix.backend.dto.SignupRequest;
-import com.academix.backend.service.AuthService;
+import com.enrollmesh.backend.dto.LoginRequest;
+import com.enrollmesh.backend.dto.LoginResponse;
+import com.enrollmesh.backend.dto.SignupRequest;
+import com.enrollmesh.backend.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

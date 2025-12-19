@@ -1,4 +1,4 @@
-package com.academix.backend.dto;
+package com.enrollmesh.backend.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

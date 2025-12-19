@@ -1,8 +1,8 @@
-package com.academix.backend.service.impl;
+package com.enrollmesh.backend.service.impl;
 
-import com.academix.backend.entity.Module;
-import com.academix.backend.repository.ModuleRepository;
-import com.academix.backend.service.ModuleService;
+import com.enrollmesh.backend.entity.Module;
+import com.enrollmesh.backend.repository.ModuleRepository;
+import com.enrollmesh.backend.service.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

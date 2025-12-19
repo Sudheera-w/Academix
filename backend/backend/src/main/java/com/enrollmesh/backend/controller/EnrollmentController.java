@@ -1,9 +1,9 @@
-package com.academix.backend.controller;
+package com.enrollmesh.backend.controller;
 
-import com.academix.backend.entity.Module;
-import com.academix.backend.entity.User;
-import com.academix.backend.repository.ModuleRepository;
-import com.academix.backend.repository.UserRepository;
+import com.enrollmesh.backend.entity.Module;
+import com.enrollmesh.backend.entity.User;
+import com.enrollmesh.backend.repository.ModuleRepository;
+import com.enrollmesh.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

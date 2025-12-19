@@ -1,11 +1,11 @@
-package com.academix.backend.service.impl;
+package com.enrollmesh.backend.service.impl;
 
-import com.academix.backend.dto.LoginRequest;
-import com.academix.backend.dto.LoginResponse;
-import com.academix.backend.dto.SignupRequest;
-import com.academix.backend.entity.User;
-import com.academix.backend.repository.UserRepository;
-import com.academix.backend.service.AuthService;
+import com.enrollmesh.backend.dto.LoginRequest;
+import com.enrollmesh.backend.dto.LoginResponse;
+import com.enrollmesh.backend.dto.SignupRequest;
+import com.enrollmesh.backend.entity.User;
+import com.enrollmesh.backend.repository.UserRepository;
+import com.enrollmesh.backend.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
-package com.academix.backend.entity;
+package com.enrollmesh.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
