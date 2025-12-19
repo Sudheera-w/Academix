@@ -6,7 +6,7 @@ function HomePage() {
         <div style={{
             fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
             color: '#333',
-            backgroundColor: '#f4f7f6',
+            backgroundColor: '#e1e1e1',
             margin: 0,
             padding: '80px 0 0', // Adjusted padding to account for the fixed NavBar
             display: 'flex',
@@ -28,18 +28,6 @@ function HomePage() {
                 <p style={{ fontSize: '20px', maxWidth: '700px', marginBottom: '40px', color: '#555' }}>
                     Welcome to EnrollMesh, the all-in-one platform designed for both administrators and students. Manage with precision, learn with focus.
                 </p>
-                <Link to="/signup" style={{
-                    textDecoration: 'none',
-                    color: '#fff',
-                    backgroundColor: '#28a745',
-                    padding: '15px 30px',
-                    borderRadius: '5px',
-                    fontSize: '18px',
-                    fontWeight: 'bold',
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-                }}>
-                    Get Started
-                </Link>
             </main>
 
             <section style={{
@@ -72,7 +60,7 @@ function HomePage() {
                         backgroundColor: '#f9f9f9'
                     }}>
                         <h4 style={{ fontSize: '22px', color: '#0056b3' }}>Student: My Modules</h4>
-                        <p style={{ color: '#666' }}>Students can log in to a personalized dashboard to view only the modules they are enrolled in.</p>
+                        <p style={{ color: '#666' }}>Students can log in to a personalized dashboard to view the modules they are enrolled in.</p>
                     </div>
                 </div>
             </section>

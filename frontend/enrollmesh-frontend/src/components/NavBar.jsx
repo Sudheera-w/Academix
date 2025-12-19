@@ -215,16 +215,15 @@ function NavBar() {
                             style={{
                                 ...(location.pathname === "/signup" ? activeLinkStyle : linkStyle),
                                 backgroundColor: location.pathname === "/signup" ? "#2852bc" : "#2852bc",
-                                color: "white",
                             }}
                             onMouseEnter={(e) => {
                                 if (location.pathname !== "/signup") {
-                                    e.target.style.background = "#1e3d8f";
+                                    e.target.style.background = "#f2f5f4";
                                 }
                             }}
                             onMouseLeave={(e) => {
                                 if (location.pathname !== "/signup") {
-                                    e.target.style.background = "#2852bc";
+                                    e.target.style.background = "transparent";
                                 }
                             }}
                         >
