@@ -45,98 +45,111 @@ function UpdateStudentPage(){
 
     return (
         <div style={{
-            display:"flex",
-            alignItems: "center",
+            display: "flex",
             flexDirection: "column",
-            paddingTop: "50px",
+            alignItems: "center",
+            paddingTop: "80px",
             width: "100%",
-            margin: 0
+            minHeight: "100vh",
+            backgroundColor: "#cdd0cf",
+            boxSizing: "border-box",
         }}>
-            <h2 style={{ textAlign: "center", marginBottom:"10px", width: "100%", marginTop: "20px"}}>Update Student</h2>
+            <h2 style={{ marginBottom: "20px", color: "#333" }}>Update Student</h2>
             <form onSubmit={handleSubmit} style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "20px",
                 width: "90%",
-                maxWidth: "450px",
+                maxWidth: "500px",
                 padding: "30px",
+                backgroundColor: "#ffffff",
+                borderRadius: "8px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
             }}>
-                <label style={{ marginBottom: "-15px" }}>Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={student.name}
-                    onChange={handleChange}
-                    required
-                    style={{
-                        padding: "12px",
-                        fontSize: "16px",
-                        borderRadius: "4px",
-                        border: "2px solid #ccc",
-                        transition: "border-color 0.8s",
-                        marginBottom:"-5px"
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = "#2852bc"}
-                    onBlur={(e) => e.target.style.borderColor = "#ccc"}
-                />
-                <label style={{ marginBottom: "-15px" }}>Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={student.email}
-                    onChange={handleChange}
-                    required
-                    style={{
-                        padding: "12px",
-                        fontSize: "16px",
-                        borderRadius: "4px",
-                        border: "2px solid #ccc",
-                        transition: "border-color 0.8s",
-                        marginBottom:"-5px"
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = "#2852bc"}
-                    onBlur={(e) => e.target.style.borderColor = "#ccc"}
-                />
-                <label style={{ marginBottom: "-15px" }}>Department</label>
-                <input
-                    type="text"
-                    name="department"
-                    placeholder="Department"
-                    value={student.department}
-                    onChange={handleChange}
-                    required
-                    style={{
-                        padding: "12px",
-                        fontSize: "16px",
-                        borderRadius: "4px",
-                        border: "2px solid #ccc",
-                        transition: "border-color 0.8s",
-                        marginBottom:"-5px"
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = "#2852bc"}
-                    onBlur={(e) => e.target.style.borderColor = "#ccc"}
-                />
-                <label style={{ marginBottom: "-15px" }}>Year</label>
-                <input
-                    type="number"
-                    name="year"
-                    placeholder="Year"
-                    value={student.year}
-                    onChange={handleChange}
-                    required
-                    style={{
-                        padding: "12px",
-                        fontSize: "16px",
-                        borderRadius: "4px",
-                        border: "2px solid #ccc",
-                        transition: "border-color 0.8s",
-                        marginBottom:"-5px"
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = "#2852bc"}
-                    onBlur={(e) => e.target.style.borderColor = "#ccc"}
-                />
+                <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+                    <label style={{ fontWeight: "bold", color: "#555" }}>Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={student.name}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            padding: "12px",
+                            fontSize: "16px",
+                            borderRadius: "4px",
+                            border: "2px solid #ccc",
+                            transition: "border-color 0.3s",
+                        }}
+                        onFocus={(e) => e.target.style.borderColor = "#2852bc"}
+                        onBlur={(e) => e.target.style.borderColor = "#ccc"}
+                    />
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+                    <label style={{ fontWeight: "bold", color: "#555" }}>Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={student.email}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            padding: "12px",
+                            fontSize: "16px",
+                            borderRadius: "4px",
+                            border: "2px solid #ccc",
+                            transition: "border-color 0.3s",
+                        }}
+                        onFocus={(e) => e.target.style.borderColor = "#2852bc"}
+                        onBlur={(e) => e.target.style.borderColor = "#ccc"}
+                    />
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+                    <label style={{ fontWeight: "bold", color: "#555" }}>Department</label>
+                    <input
+                        type="text"
+                        name="department"
+                        placeholder="Department"
+                        value={student.department}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            padding: "12px",
+                            fontSize: "16px",
+                            borderRadius: "4px",
+                            border: "2px solid #ccc",
+                            transition: "border-color 0.3s",
+                        }}
+                        onFocus={(e) => e.target.style.borderColor = "#2852bc"}
+                        onBlur={(e) => e.target.style.borderColor = "#ccc"}
+                    />
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+                    <label style={{ fontWeight: "bold", color: "#555" }}>Year</label>
+                    <input
+                        type="number"
+                        name="year"
+                        placeholder="Year"
+                        value={student.year}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            padding: "12px",
+                            fontSize: "16px",
+                            borderRadius: "4px",
+                            border: "2px solid #ccc",
+                            transition: "border-color 0.3s",
+                        }}
+                        onFocus={(e) => e.target.style.borderColor = "#2852bc"}
+                        onBlur={(e) => e.target.style.borderColor = "#ccc"}
+                    />
+                </div>
+
                 <button
                     type="submit"
                     style={{
@@ -144,17 +157,16 @@ function UpdateStudentPage(){
                         fontSize: "18px",
                         fontWeight: "bold",
                         borderRadius: "4px",
-                        background: "#0bc547",
+                        background: "#2852bc",
                         color: "white",
                         cursor: "pointer",
                         transition: "background 0.3s",
                         marginTop: "10px",
-                        width: "50%",
-                        maxWidth: "400px",
-                        alignSelf: "center",
+                        border: "none",
+                        width: "100%"
                     }}
-                    onMouseEnter={(e) => e.target.style.background = "#0bc447"}
-                    onMouseLeave={(e) => e.target.style.background = "#016c25"}
+                    onMouseEnter={(e) => e.target.style.background = "#1e3d8f"}
+                    onMouseLeave={(e) => e.target.style.background = "#2852bc"}
                 >
                     Update Student
                 </button>
