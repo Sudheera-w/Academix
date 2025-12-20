@@ -66,14 +66,16 @@ function EnrollmentPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            paddingTop: "50px",
+            paddingTop: "80px",
             width: "100%",
-            margin: 0
+            minHeight: "100vh",
+            backgroundColor: "#cdcfcf",
+            boxSizing: "border-box",
         }}>
-            <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Manage Student Enrollments</h2>
+            <h2 style={{ marginBottom: "20px", color: "#333" }}>Manage Student Enrollments</h2>
 
-            <div style={{ marginBottom: "20px" }}>
-                <label>Select Student: </label>
+            <div style={{ marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                <label style={{ fontWeight: "bold", color: "#555" }}>Select Student: </label>
                 <select
                     value={enrollmentData.selectedStudent ? enrollmentData.selectedStudent.id : ""}
                     onChange={e => {
@@ -85,7 +87,8 @@ function EnrollmentPage() {
                         fontSize: "16px",
                         borderRadius: "4px",
                         border: "2px solid #ccc",
-                        transition: "border-color 0.8s"
+                        transition: "border-color 0.3s",
+                        minWidth: "250px"
                     }}
                     onFocus={(e) => e.target.style.borderColor = "#2852bc"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
@@ -100,8 +103,19 @@ function EnrollmentPage() {
             </div>
 
             {enrollmentData.selectedStudent && (
-                <table border="2" cellPadding="10" style={{ margin: "20px auto", minWidth: "600px" }}>
-                    <thead>
+                <table
+                    border="2"
+                    cellPadding="10"
+                    style={{
+                        marginTop: "20px",
+                        minWidth: "600px",
+                        borderCollapse: "collapse",
+                        backgroundColor: "#676767",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                        textAlign: "center"
+                    }}
+                >
+                    <thead style={{ backgroundColor: "#2852bc", color: "#ffffff" }}>
                     <tr>
                         <th>Module Name</th>
                         <th>Code</th>
