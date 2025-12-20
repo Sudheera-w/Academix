@@ -36,18 +36,15 @@ function AddModulePage() {
     return (
         <div style={{
             display: "flex",
-            alignItems: "center",
             flexDirection: "column",
-            paddingTop: "50px",
+            alignItems: "center",
+            paddingTop: "80px",
             width: "100%",
-            margin: 0
+            minHeight: "100vh",
+            backgroundColor: "rgb(205,207,207)",
+            boxSizing: "border-box",
         }}>
-            <h2 style={{
-                textAlign: "center",
-                marginBottom: "20px",
-                width: "100%",
-                marginTop: "10px"
-            }}>
+            <h2 style={{ marginBottom: "20px", color: "#333" }}>
                 Add Module
             </h2>
 
@@ -58,6 +55,9 @@ function AddModulePage() {
                 width: "90%",
                 maxWidth: "500px",
                 padding: "30px",
+                backgroundColor: "#ffffff",
+                borderRadius: "8px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
             }}>
 
                 <input
@@ -143,7 +143,8 @@ function AddModulePage() {
                         color: "white",
                         cursor: "pointer",
                         transition: "background 0.3s",
-                        marginTop: "10px"
+                        marginTop: "10px",
+                        border: "none"
                     }}
                     onMouseEnter={(e) => e.target.style.background = "#1e3d8f"}
                     onMouseLeave={(e) => e.target.style.background = "#2852bc"}

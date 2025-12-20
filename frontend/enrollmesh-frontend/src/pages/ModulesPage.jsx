@@ -29,12 +29,13 @@ function ModulesPage() {
         <div
             style={{
                 display: "flex",
-                alignItems: "center",
                 flexDirection: "column",
-                paddingTop: "50px",
+                alignItems: "center",
+                paddingTop: "80px",
                 width: "100%",
+                minHeight: "100vh",
+                backgroundColor: "rgba(244,247,246,0.82)",
                 boxSizing: "border-box",
-                margin: 0,
             }}
         >
             <div
@@ -45,19 +46,11 @@ function ModulesPage() {
                     width: "90%",
                     maxWidth: "900px",
                     marginBottom: "20px",
-                    marginTop: "10px",
                 }}
             >
-                <h1
-                    style={{
-                        textAlign: "left",
-                        marginBottom: "20px",
-                        width: "100%",
-                        marginTop: "10px",
-                    }}
-                >
+                <h2 style={{ color: "#333", margin: 0 }}>
                     Modules
-                </h1>
+                </h2>
 
                 <button
                     style={{
@@ -91,19 +84,16 @@ function ModulesPage() {
                 border="2"
                 cellPadding="10"
                 style={{
+                    marginTop: "20px",
                     width: "90%",
                     maxWidth: "900px",
                     borderCollapse: "collapse",
+                    backgroundColor: "#676767",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                     textAlign: "center",
-                    background: "#2852bc",
-                    marginTop: "20px",
                 }}
             >
-                <thead
-                    style={{
-                        background: "#000000",
-                    }}
-                >
+                <thead style={{ backgroundColor: "#2852bc", color: "#ffffff" }}>
                 <tr>
                     <th>Name</th>
                     <th>Code</th>
@@ -132,6 +122,7 @@ function ModulesPage() {
                                     color: "black",
                                     cursor: "pointer",
                                     transition: "background 0.3s",
+                                    border: "none"
                                 }}
                                 onClick={() =>
                                     navigate(`/edit-module/${module.id}`)
@@ -153,14 +144,15 @@ function ModulesPage() {
                                     fontWeight: "bold",
                                     borderRadius: "4px",
                                     marginLeft: "10px",
-                                    background: "#680000",
-                                    color: "black",
+                                    background: "#cd0000",
+                                    color: "white",
                                     cursor: "pointer",
                                     transition: "background 0.3s",
+                                    border: "none"
                                 }}
                                 onClick={() => handleDelete(module.id)}
                                 onMouseEnter={(e) =>
-                                    e.target.style.background = "#640000"
+                                    e.target.style.background = "#a00000"
                                 }
                                 onMouseLeave={(e) =>
                                     e.target.style.background = "#cd0000"
