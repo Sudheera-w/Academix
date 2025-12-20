@@ -72,7 +72,7 @@ function EnrollmentPage() {
             backgroundColor: "#cdcfcf",
             boxSizing: "border-box",
         }}>
-            <h2 style={{ marginBottom: "20px", color: "#333" }}>Manage Student Enrollments</h2>
+            <h2 style={{ fontSize: "35px",marginBottom: "20px", color: "#333" }}>Manage Student Enrollments</h2>
 
             <div style={{ marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
                 <label style={{ fontWeight: "bold", color: "#555" }}>Select Student: </label>

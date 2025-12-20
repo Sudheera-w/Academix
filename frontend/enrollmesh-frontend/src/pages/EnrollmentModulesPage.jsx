@@ -60,7 +60,7 @@ function EnrollmentModulesPage() {
                 boxSizing: "border-box",
             }}
         >
-            <h2 style={{ marginBottom: "20px", color: "#333" }}>My Enrolled Modules</h2>
+            <h2 style={{ fontSize: "30px",marginBottom: "20px", color: "#333" }}>My Enrolled Modules</h2>
 
             {loading && (
                 <p style={{ color: "#555" }}>Loading your enrolled modules...</p>

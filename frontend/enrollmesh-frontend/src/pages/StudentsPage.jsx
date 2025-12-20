@@ -41,7 +41,7 @@ function StudentsPage(){
                 maxWidth: "900px",
                 marginBottom: "20px",
             }}>
-                <h2 style={{ color: "#333", margin: 0 }}>Students</h2>
+                <h2 style={{ fontSize: "35px", color: "#333", margin: 0 }}>Students</h2>
                 <button
                     style={{
                         whiteSpace: "nowrap",
