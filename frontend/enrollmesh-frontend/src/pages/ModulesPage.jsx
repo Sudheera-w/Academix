@@ -34,7 +34,7 @@ function ModulesPage() {
                 paddingTop: "80px",
                 width: "100%",
                 minHeight: "100vh",
-                backgroundColor: "rgba(244,247,246,0.82)",
+                backgroundColor: "#cacccc",
                 boxSizing: "border-box",
             }}
         >
@@ -81,16 +81,17 @@ function ModulesPage() {
             </div>
 
             <table
-                border="2"
+                border="1"
                 cellPadding="10"
                 style={{
                     marginTop: "20px",
                     width: "90%",
                     maxWidth: "900px",
                     borderCollapse: "collapse",
-                    backgroundColor: "#676767",
+                    backgroundColor: "#ffffff",
                     boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                     textAlign: "center",
+                    borderColor: "#ddd"
                 }}
             >
                 <thead style={{ backgroundColor: "#2852bc", color: "#ffffff" }}>
@@ -103,9 +104,9 @@ function ModulesPage() {
                 </tr>
                 </thead>
 
-                <tbody>
+                <tbody style={{ color: "black" }}>
                 {modules.map((module) => (
-                    <tr key={module.id}>
+                    <tr key={module.id} style={{ borderBottom: "1px solid #ddd" }}>
                         <td>{module.name}</td>
                         <td>{module.code}</td>
                         <td>{module.credits}</td>

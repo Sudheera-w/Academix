@@ -69,7 +69,7 @@ function EnrollmentPage() {
             paddingTop: "80px",
             width: "100%",
             minHeight: "100vh",
-            backgroundColor: "#cdcfcf",
+            backgroundColor: "#cbcdcd",
             boxSizing: "border-box",
         }}>
             <h2 style={{ fontSize: "35px",marginBottom: "20px", color: "#333" }}>Manage Student Enrollments</h2>
@@ -88,7 +88,9 @@ function EnrollmentPage() {
                         borderRadius: "4px",
                         border: "2px solid #ccc",
                         transition: "border-color 0.3s",
-                        minWidth: "250px"
+                        minWidth: "250px",
+                        color: "black",
+                        backgroundColor: "white"
                     }}
                     onFocus={(e) => e.target.style.borderColor = "#2852bc"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
@@ -104,15 +106,16 @@ function EnrollmentPage() {
 
             {enrollmentData.selectedStudent && (
                 <table
-                    border="2"
+                    border="1"
                     cellPadding="10"
                     style={{
                         marginTop: "20px",
                         minWidth: "600px",
                         borderCollapse: "collapse",
-                        backgroundColor: "#676767",
+                        backgroundColor: "#fdfdfd",
                         boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-                        textAlign: "center"
+                        textAlign: "center",
+                        borderColor: "#ddd"
                     }}
                 >
                     <thead style={{ backgroundColor: "#2852bc", color: "#ffffff" }}>
@@ -124,9 +127,9 @@ function EnrollmentPage() {
                         <th>Enrolled</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody style={{ color: "black" }}>
                     {enrollmentData.modules.map(module => (
-                        <tr key={module.id}>
+                        <tr key={module.id} style={{ borderBottom: "1px solid #ddd" }}>
                             <td>{module.name}</td>
                             <td>{module.code}</td>
                             <td>{module.credits}</td>

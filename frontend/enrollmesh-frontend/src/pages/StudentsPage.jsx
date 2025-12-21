@@ -30,7 +30,7 @@ function StudentsPage(){
             paddingTop: "80px",
             width: "100%",
             minHeight: "100vh",
-            backgroundColor: "#cdcfcf",
+            backgroundColor: "#c9cbcb",
             boxSizing: "border-box",
         }}>
             <div style={{
@@ -70,16 +70,17 @@ function StudentsPage(){
                 </button>
             </div>
             <table
-                border="2"
+                border="1"
                 cellPadding="10"
                 style={{
                     marginTop: "20px",
                     width: "90%",
                     maxWidth: "900px",
                     borderCollapse: "collapse",
-                    backgroundColor: "#676767",
+                    backgroundColor: "#ffffff",
                     boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                     textAlign: "center",
+                    borderColor: "#ddd"
                 }}
             >
                 <thead style={{ backgroundColor: "#2852bc", color: "#ffffff" }}>
@@ -91,9 +92,9 @@ function StudentsPage(){
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style={{ color: "black" }}>
                 {students.map((student)=>(
-                    <tr key = {student.id}>
+                    <tr key = {student.id} style={{ borderBottom: "1px solid #ddd" }}>
                         <td>{student.name}</td>
                         <td>{student.email}</td>
                         <td>{student.department}</td>
