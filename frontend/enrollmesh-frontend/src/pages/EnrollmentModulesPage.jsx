@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import StudentService from "../services/StudentService";
 
-const ENROLL_URL = "http://localhost:8080/api/enrollments";
+const ENROLL_URL =`${import.meta.env.VITE_API_URL}/api/enrollments`;
 
 function EnrollmentModulesPage() {
     const [modules, setModules] = useState([]);
@@ -48,6 +48,7 @@ function EnrollmentModulesPage() {
     }, []);
 
     return (
+
         <div
             style={{
                 display: "flex",
