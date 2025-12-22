@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import StudentsPage from "../pages/StudentsPage.jsx";
 import AddStudentPage from "../pages/AddStudentPage.jsx";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar.jsx";
 import UpdateStudentPage from "../pages/UpdateStudentPage.jsx";
 import ModulesPage from "../pages/ModulesPage.jsx";
 import AddModulePage from "../pages/AddModulePage.jsx";
@@ -12,9 +12,9 @@ import EnrollmentPage from "../pages/EnrollmentPage.jsx";
 import EnrollmentModulesPage from "../pages/EnrollmentModulesPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import SignupPage from "../pages/SignupPage.jsx";
-import ProtectedRoute from "../components/ProtectedRoute";
-import AdminRoute from "../components/AdminRoute";
-import PublicRoute from "../components/PublicRoute";
+import ProtectedRoute from "../components/ProtectedRoute.jsx";
+import AdminRoute from "../components/AdminRoute.jsx";
+import PublicRoute from "../components/PublicRoute.jsx";
 
 function AppRouter() {
     return (
